@@ -3,5 +3,6 @@
 
 start:
 npm i 
+
 node app
 
