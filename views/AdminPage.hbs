@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="../css/cssAdmin.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+
+
+<body>
+    {{>header}}
+
+    {{>dataContainer}}
+</body>
+
+</html>
+
+<script>
+
+    setInterval(() => {
+        window.location.reload()
+    }, 8000)
+
+    function HideData(id) {
+        document.querySelector(id).style.backgroundColor = "rgba(213, 38, 38, 1)"
+    }
+
+</script>

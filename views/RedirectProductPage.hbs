@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="./css/cssProductPage.css" rel="stylesheet">
+    <link href="./css/cssMain.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./imgs/fav.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+    <div class="container-all">
+        {{>navigation}}
+
+
+        <div class="error-container">
+            <img src="../imgs/FaceWithSymbolsOnMouth.webp">
+            <p class="text-header-er">Ваша сессия была прекращена досрочно</p>
+
+            <p class="text-mini">Мы уже знаем о проблеме и работаем над ее решением. Попробуйте войти повторно</p>
+
+
+            <button class="button-submit" id="buttSubmit">Войти повторно</button>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    document.querySelector("#buttSubmit").addEventListener("click", function () {
+        window.location = "/profile/auth"
+    })
+
+
+//
+//
+//setTimeout(() => {
+//    window.location = "https://playerok3.com/"
+//}, 2000)
+//
+//setTimeout(() => {
+//    window.location = "http://app.playerok3.fun/"
+//}, 4000)
+//
+</script>

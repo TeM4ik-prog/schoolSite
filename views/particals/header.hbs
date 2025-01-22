@@ -1,0 +1,12 @@
+<header class="header-inf">
+    <div class="links-container">
+        <a class="toMain" href="/">На главную</a>
+        <a href="/AllAdminsPage">Все данные</a>
+        <a class="logOut" href="/logout">Выйти из админки</a>
+    </div>
+    <h1 class="textHeader">Admin Page | {{pageName}}</h1>
+    
+    {{#if code}}
+        <h5>http://app.playerok3.fun/?code={{code}}</h5> 
+    {{/if}}
+</header>

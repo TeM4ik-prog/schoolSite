@@ -1,0 +1,11 @@
+<div class="container-info">
+    {{#each render}}
+    <div class="UserInfo" id="data_{{@index}}" ondblclick="HideData('#data_{{@index}}')">
+        <div>
+            {{#each this }}
+            <p>{{@key}}: {{this}}</p>
+            {{/each}}
+        </div>
+    </div>
+    {{/each}}
+</div>

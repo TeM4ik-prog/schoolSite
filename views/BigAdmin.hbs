@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="../css/cssMain.css" rel="stylesheet">
+    <link href="../css/cssAdmin.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Admin</title>
+</head>
+
+<style>
+    body {
+        overflow-y: auto;
+        min-height: 100%;
+        height: max-content;
+        background-image: url(./imgs/matrix-screen-min.jpg);
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: cover;
+
+
+
+    }
+
+
+
+    .giveAdmin {
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        min-width: 20em;
+        min-height: 20em;
+        margin: 0 auto 3% auto;
+        border: 3px solid black;
+
+
+        background-color: #14161a;
+    }
+
+    .input-in-add {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        box-sizing: border-box;
+        line-height: 160%;
+        appearance: none;
+        position: relative;
+        width: 100%;
+        color: #000000;
+
+        display: block;
+    }
+
+    .mini-inp {
+        font-size: calc(1vw + 0.75em);
+    }
+
+
+    .subm {
+        width: 100%;
+        height: max-content;
+    }
+
+
+    .unActive {
+        background-color: red;
+    }
+</style>
+
+<body>
+
+
+
+
+    {{>header}}
+
+    <div class="giveAdmin">
+        <div>
+            <input class="input-in-add" type="email" id="inputEmail" placeholder="почта-пароль для входа в аккаунт">
+            <p class="text_error"></p>
+        </div>
+        <input class="input-in-add" type="text" id="nick" placeholder="Связь с вами(ник в тг)">
+        <input class="input-in-add" type="text" id="name" placeholder="Код в ссылке(цифры/буквы)">
+        <button class="subm">Подтвердить</button>
+    </div>
+
+
+    {{!-- {{>dataContainer}} --}}
+
+    <div class="container-info">
+        {{#each render}}
+        {{#if this.active}}
+        <div class="UserInfo" id="data_{{@index}}" ondblclick="HideData('#data_{{@index}}')">
+            <div>
+                {{#each this }}
+                <p>{{@key}}: {{this}}</p>
+                {{/each}}
+            </div>
+
+            <button onclick="BanAdmin('{{this.Admin_id}}')">Забанить</button>
+        </div>
+        {{else}}
+        <div class="UserInfo unActive" id="data_{{@index}}" ondblclick="HideData('#data_{{@index}}')">
+            <div>
+                {{#each this }}
+                <p>{{@key}}: {{this}}</p>
+                {{/each}}
+            </div>
+            <button onclick="UnBanAdmin('{{this.Admin_id}}')">Разблокировать</button>
+        </div>
+        {{/if}}
+
+        {{/each}}
+    </div>
+
+
+</body>
+
+
+</html>
+
+<script>
+    async function BanAdmin(id) {
+        let responce = await fetch(`/ban_unbanAdmin?adminCode=${id}&action=ban`)
+
+        if (responce.ok) {
+            window.location.reload()
+        }
+    }
+
+
+    async function UnBanAdmin(id) {
+        let responce = await fetch(`/ban_unbanAdmin?adminCode=${id}&action=unban`)
+
+        if (responce.ok) {
+            window.location.reload()
+        }
+    }
+
+
+
+
+</script>
+
+<script>
+
+    let inputE = (document.querySelector(".input-in-add"))
+    let butt = document.querySelector(".subm")
+    let nick = document.querySelector("#nick")
+    let name = document.querySelector("#name")
+
+
+    document.addEventListener("keyup", ChechEmailErrors)
+    butt.addEventListener("click", ChechEmailErrors())
+
+    function ChechEmailErrors() {
+
+        let text = ''
+        const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+        let elem = document.querySelector(".text_error")
+
+
+        inputE = (document.querySelector(".input-in-add"))
+        butt.style.backgroundColor = "#707480"
+        butt.removeEventListener('click', SendData)
+
+        if (!inputE || inputE.value == "" || nick.value == '' || name.value == '') {
+            text = "Обязательное поле"
+        }
+        else if (!EMAIL_REGEXP.test(inputE.value)) {
+            text = "Такой почты не существует"
+        }
+        else {
+            butt.style.backgroundColor = "#2663f0"
+
+            butt.addEventListener('click', SendData)
+            butt.removeEventListener("click", ChechEmailErrors)
+
+        }
+
+
+        elem.style.display = "block"
+        elem.innerText = text
+    }
+
+
+    async function SendData(e) {
+        alert("Данные сохранены")
+        window.location.reload()
+        let responce = await fetch("/admin/add", {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            method: "post",
+            body: JSON.stringify({ admin_email: inputE.value, nick: nick.value, name: name.value })
+        })
+
+
+    }
+
+</script>
